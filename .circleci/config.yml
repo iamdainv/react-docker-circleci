@@ -3,7 +3,7 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@latest
+  node: circleci/node@4.7
   docker: circleci/docker@2.0.1
 
 jobs:

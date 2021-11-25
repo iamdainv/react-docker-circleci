@@ -1,8 +1,7 @@
-FROM node:14-stretch-slim as node-builder
+FROM node:14-stretch-slim as build
 WORKDIR /app
-COPY . /app/
+COPY . /app
 RUN npm install && npm run build
 
 FROM nginx:latest
-COPY --from=node-builder /app/build /usr/share/nginx/html
-
+COPY --from=build /app/build /usr/share/nginx/html
