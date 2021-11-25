@@ -9,7 +9,7 @@ orbs:
 jobs:
   build-and-push:
     environment:
-      DOCKER_IMAGE: shobbecnnpm/react-circleci
+      DOCKER_IMAGE: shobbecnpm/react-circleci
       DOCKER_TAG: latest
     executor: docker/docker
     steps:
