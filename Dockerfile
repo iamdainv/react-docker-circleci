@@ -1,4 +1,4 @@
-FROM node:14-alpine as node-builder
+FROM node:14-stretch-slim as node-builder
 WORKDIR /app
 COPY . /app/
 RUN npm install && npm run build
