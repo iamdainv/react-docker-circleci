@@ -3,8 +3,8 @@
 # my config
 version: 2.1
 orbs:
-  node: circleci/node@3.0.0
-  docker: circleci/docker@1.4.0
+  node: circleci/node@4.7.0
+  docker: circleci/docker@2.0.1
 
 jobs:
   build-and-push:
@@ -36,16 +36,16 @@ jobs:
       DEPLOYED_USER: ubuntu
       DEPLOYED_SERVER: ec2-13-212-119-209.ap-southeast-1.compute.amazonaws.com
     steps:
-      # Please add $SSH_KEY_FINGERPRINT, $DEPLOYED_USER@ and DEPLOYED_SERVER to project's environment
       - add_ssh_keys:
           fingerprints:
             - $SSH_KEY_FINGERPRINT
-      #oStrictHostKeyChecking=no
+      #oStrictHostKeyChecking=no skip asking yes/no
       - run: ssh -oStrictHostKeyChecking=no $DEPLOYED_USER@$DEPLOYED_SERVER './deploy.sh'
 
 workflows:
   my-pipeline:
     jobs:
+      #write unit test for it
       - node/test
       - build-and-push:
           requires:
@@ -54,7 +54,6 @@ workflows:
             branches:
               only:
                 - master
-      # uncomment the 3 following lines to enable deploying
       - deploy:
           requires:
             - build-and-push
