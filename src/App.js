@@ -25,7 +25,7 @@ function App() {
 					href='https://www.facebook.com/'
 					target='_blank'
 					rel='noopener noreferrer'>
-					Facebook.com
+					Facebook.com react-circleci
 				</a>
 			</header>
 		</div>
