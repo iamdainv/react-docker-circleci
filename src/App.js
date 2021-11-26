@@ -18,7 +18,14 @@ function App() {
 					href='https://reactjs.org'
 					target='_blank'
 					rel='noopener noreferrer'>
-					ahjhj 131234
+					Learn React
+				</a>
+				<a
+					className='App-link'
+					href='https://www.facebook.com/'
+					target='_blank'
+					rel='noopener noreferrer'>
+					Facebook.com
 				</a>
 			</header>
 		</div>
